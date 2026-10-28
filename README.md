@@ -24,11 +24,21 @@
 
 ## 安装
 
+需要 DeepSeek Harness 0.2.0 及以上。纯 JavaScript, 没有构建步骤, 不需要编译工具链。
+
 ```
-dsh plugin add github:owner/dsh-smart-model
+dsh plugin add github:yangw3967-ctrl/dsh-smart-model
 ```
 
-装完刷新页面或重启应用, 输入框下方会出现 `Flash · 关` 样式的 chip。
+装完刷新页面(或重启应用), 输入框下方会出现 `Flash · 关` 样式的 chip。
+
+安装过程如果提示是否允许运行构建脚本(`allowBuilds`): 本插件没有构建脚本, 拒绝也不影响运行。
+
+### 兼容性
+
+- 通过 `dsh-client-ui-conversation` 暴露的槽位取到 `inputActions` / `useInput`, 换到没有这些 props 的界面时会自动停用, 不会报错。
+- 切换失败只写本地日志, 不会打断对话。
+- 日志默认写在 `%TEMP%/dsh-smart-model/heartbeat.log`, 可以设环境变量 `DSH_SMART_MODEL_LOG` 改路径。
 
 ## 结构
 
