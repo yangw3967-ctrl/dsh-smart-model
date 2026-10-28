@@ -1,0 +1,5 @@
+node_modules/
+heartbeat.log
+heartbeat.log.*
+*.bak
+.DS_Store

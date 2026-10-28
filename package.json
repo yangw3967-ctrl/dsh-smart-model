@@ -1,0 +1,46 @@
+{
+  "name": "dsh-smart-model",
+  "version": "0.1.0",
+  "description": "Auto-switch DeepSeek Harness model and reasoning effort based on prompt complexity.",
+  "type": "module",
+  "license": "MIT",
+  "author": "yangw3967-ctrl",
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "model-selection"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yangw3967-ctrl/dsh-smart-model.git"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "locale/en.json",
+    "locale/zh.json"
+  ],
+  "engines": {
+    "dsh": ">=0.2.0-rc.1"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  }
+}
