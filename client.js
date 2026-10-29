@@ -8,7 +8,7 @@
 // heartbeat.log in the bundle directory. When the host route is absent,
 // every report is silently dropped.
 window.__ModuleLoader__.load({
-  id: '@local/dsh-smart-model',
+  id: 'dsh-smart-model',
   factory(require) {
     const React = require('react');
     const { useEffect, useState, useRef } = React;
